@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Apologetic Failures | Edwin Wilson</title>
 <meta name="description" content="Apologetic Failures — An Apology for Failing as a Father — A Generational Curse by Edwin Wilson.">
 <style>
