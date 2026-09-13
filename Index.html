@@ -1,1 +1,414 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apologetic Failures | Edwin Wilson</title>
+<meta name="description" content="Apologetic Failures — An Apology for Failing as a Father — A Generational Curse by Edwin Wilson.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+background:#080807;
+color:#eee9df;
+font-family:Georgia,"Times New Roman",serif;
+line-height:1.7;
+}
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:22px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:100;
+background:linear-gradient(to bottom,rgba(8,8,7,.96),transparent);
+}
+.logo{
+font-family:Arial,sans-serif;
+font-size:11px;
+font-weight:bold;
+letter-spacing:4px;
+}
+nav a{
+color:#eee9df;
+text-decoration:none;
+margin-left:25px;
+font:10px Arial,sans-serif;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+.hero{
+min-height:100vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+padding:120px 7%;
+background:
+radial-gradient(circle at 50% 40%,rgba(170,150,115,.14),transparent 35%),
+linear-gradient(135deg,#080807,#11100e 50%,#070706);
+}
+.hero:before{
+content:"";
+position:absolute;
+inset:28px;
+border:1px solid rgba(238,233,223,.15);
+pointer-events:none;
+}
+.hero:after{
+content:"";
+position:absolute;
+width:700px;
+height:700px;
+border-radius:50%;
+background:rgba(255,255,255,.025);
+filter:blur(100px);
+animation:glow 9s ease-in-out infinite;
+}
+@keyframes glow{
+0%,100%{transform:scale(.85);opacity:.3}
+50%{transform:scale(1.1);opacity:.7}
+}
+.hero-inner{
+position:relative;
+z-index:2;
+width:min(1200px,100%);
+display:grid;
+grid-template-columns:360px 1fr;
+gap:90px;
+align-items:center;
+}
+.cover{
+width:100%;
+max-height:620px;
+object-fit:contain;
+display:block;
+box-shadow:
+0 35px 80px rgba(0,0,0,.75),
+0 0 0 1px rgba(238,233,223,.12);
+animation:appear 1.4s ease both;
+}
+@keyframes appear{
+from{opacity:0;transform:translateY(25px)}
+to{opacity:1;transform:translateY(0)}
+}
+.hero-copy{
+animation:rise 1.2s ease .2s both;
+}
+@keyframes rise{
+from{opacity:0;transform:translateY(30px)}
+to{opacity:1;transform:translateY(0)}
+}
+.eyebrow{
+font:10px Arial,sans-serif;
+letter-spacing:5px;
+text-transform:uppercase;
+color:#aaa08f;
+margin-bottom:25px;
+}
+h1{
+font-size:clamp(55px,8vw,105px);
+font-weight:normal;
+line-height:.86;
+letter-spacing:-4px;
+text-transform:uppercase;
+}
+.subtitle{
+margin-top:30px;
+font-size:clamp(19px,2.5vw,28px);
+font-style:italic;
+color:#c6bdae;
+max-width:650px;
+}
+.author{
+margin-top:25px;
+font:11px Arial,sans-serif;
+letter-spacing:5px;
+text-transform:uppercase;
+color:#9d9486;
+}
+.enter{
+display:inline-block;
+margin-top:45px;
+padding:15px 28px;
+border:1px solid rgba(238,233,223,.45);
+color:#eee9df;
+text-decoration:none;
+font:10px Arial,sans-serif;
+letter-spacing:3px;
+text-transform:uppercase;
+transition:.3s;
+}
+.enter:hover{
+background:#eee9df;
+color:#080807;
+}
+section{padding:120px 8%}
+.book{
+max-width:900px;
+margin:auto;
+}
+.label{
+font:10px Arial,sans-serif;
+letter-spacing:4px;
+text-transform:uppercase;
+color:#978e80;
+margin-bottom:22px;
+}
+h2{
+font-size:clamp(42px,6vw,75px);
+font-weight:normal;
+line-height:1;
+}
+.book p,
+.author-section p{
+max-width:760px;
+color:#aaa195;
+font-size:18px;
+margin-top:25px;
+}
+.quote{
+margin-top:60px;
+padding:55px 0;
+border-top:1px solid rgba(238,233,223,.14);
+border-bottom:1px solid rgba(238,233,223,.14);
+font-size:clamp(25px,4vw,45px);
+font-style:italic;
+line-height:1.25;
+}
+.poetry{background:#0d0c0b}
+.poetry h2{margin-bottom:50px}
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:1px;
+background:rgba(238,233,223,.12);
+}
+.poem{
+background:#0d0c0b;
+padding:42px;
+min-height:190px;
+transition:.35s;
+}
+.poem:hover{background:#161411}
+.number{
+font:10px Arial,sans-serif;
+letter-spacing:2px;
+color:#71695d;
+}
+.poem h3{
+font-size:27px;
+font-weight:normal;
+margin:17px 0 8px;
+}
+.poem p{
+font-size:14px;
+color:#91897d;
+}
+.statement{
+min-height:70vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:radial-gradient(circle,rgba(150,135,110,.08),transparent 55%);
+}
+.statement h2{max-width:1000px}
+.author-section{
+max-width:900px;
+margin:auto;
+}
+.closing{
+text-align:center;
+border-top:1px solid rgba(238,233,223,.1);
+}
+.closing p{
+margin-top:25px;
+color:#8d8579;
+font-style:italic;
+}
+footer{
+padding:40px 8%;
+border-top:1px solid rgba(238,233,223,.1);
+display:flex;
+justify-content:space-between;
+color:#69635b;
+font:10px Arial,sans-serif;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+@media(max-width:850px){
+nav .links{display:none}
+.hero{
+padding:110px 8% 80px;
+}
+.hero-inner{
+grid-template-columns:1fr;
+gap:45px;
+text-align:center;
+}
+.cover{
+width:min(280px,70vw);
+max-height:480px;
+margin:auto;
+}
+.hero-copy{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+h1{
+font-size:16vw;
+letter-spacing:-2px;
+}
+.subtitle{
+font-size:20px;
+}
+.grid{
+grid-template-columns:1fr;
+}
+section{padding:90px 7%}
+footer{
+flex-direction:column;
+gap:15px;
+text-align:center;
+}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo">APOLOGETIC FAILURES</div>
+<div class="links">
+<a href="#book">The Book</a>
+<a href="#poetry">Poetry</a>
+<a href="#author">The Author</a>
+</div>
+</nav>
+<header class="hero">
+<div class="hero-inner">
+<img class="cover" src="IMG_0407.png" alt="Apologetic Failures book cover">
+<div class="hero-copy">
+<div class="eyebrow">A Poetry Memoir by Edwin Wilson</div>
+<h1>Apologetic<br>Failures</h1>
+<div class="subtitle">
+An Apology for Failing as a Father —
+A Generational Curse
+</div>
+<div class="author">Edwin Wilson</div>
+<a class="enter" href="#book">Enter the Story ↓</a>
+</div>
+</div>
+</header>
+<section id="book">
+<div class="book">
+<div class="label">The Book</div>
+<h2>A reckoning with<br>what we inherit.</h2>
+<p>
+Some apologies are spoken. Others have to be written from the places where silence has lived for years.
+</p>
+<p>
+<em>Apologetic Failures</em> explores fatherhood, regret, love, accountability, and the generational wounds we carry long before we understand their names.
+</p>
+<div class="quote">
+“What if the things we inherit are not the things we have to become?”
+</div>
+</div>
+</section>
+<section id="poetry" class="poetry">
+<div class="label">Selected Works</div>
+<h2>The Poetry</h2>
+<div class="grid">
+<div class="poem">
+<div class="number">01</div>
+<h3>Apologetic Failures</h3>
+<p>An apology written from the uncomfortable space between love and accountability.</p>
+</div>
+<div class="poem">
+<div class="number">02</div>
+<h3>Just 5 More Minutes</h3>
+<p>A meditation on time, absence, and the moments we wish we could have back.</p>
+</div>
+<div class="poem">
+<div class="number">03</div>
+<h3>The Black Mind</h3>
+<p>An exploration of thought, identity, pressure, and survival.</p>
+</div>
+<div class="poem">
+<div class="number">04</div>
+<h3>I Refuse to Change</h3>
+<p>What happens when love begins transforming the person you promised yourself you would remain?</p>
+</div>
+<div class="poem">
+<div class="number">05</div>
+<h3>Permissive Will</h3>
+<p>Wrestling with choices, consequences, and the silence that follows them.</p>
+</div>
+<div class="poem">
+<div class="number">06</div>
+<h3>The Black Child</h3>
+<p>Childhood, identity, inheritance, and the things children learn without being taught.</p>
+</div>
+<div class="poem">
+<div class="number">07</div>
+<h3>Give Me Words</h3>
+<p>The desperate search for language when feelings become too large for ordinary speech.</p>
+</div>
+<div class="poem">
+<div class="number">08</div>
+<h3>The Bitter Pill</h3>
+<p>Sometimes healing begins with swallowing the truth.</p>
+</div>
+<div class="poem">
+<div class="number">09</div>
+<h3>Vision of Beauty</h3>
+<p>Finding beauty where pain once convinced us there was none.</p>
+</div>
+<div class="poem">
+<div class="number">10</div>
+<h3>Nobody Stays Forever</h3>
+<p>Love, loss, memory, and the impermanence of human connection.</p>
+</div>
+<div class="poem">
+<div class="number">11</div>
+<h3>Oxygen</h3>
+<p>When another person becomes the breath that awakens something long asleep.</p>
+</div>
+</div>
+</section>
+<section class="statement">
+<h2>
+There are wounds we inherit,
+and wounds we choose to end.
+</h2>
+</section>
+<section id="author">
+<div class="author-section">
+<div class="label">The Author</div>
+<h2>Edwin Wilson</h2>
+<p>
+Edwin Wilson writes from the uncomfortable space between memory and accountability.
+</p>
+<p>
+His words examine fatherhood, generational cycles, love, regret, identity, and the difficult process of becoming honest with oneself.
+</p>
+<p>
+<em>Apologetic Failures</em> is not an attempt to erase the past. It is an attempt to finally speak to it.
+</p>
+</div>
+</section>
+<section class="closing">
+<div class="label">A Poetry Memoir</div>
+<h2>Read what<br>had to be said.</h2>
+<p>Edwin Wilson</p>
+</section>
+<footer>
+<span>© 2026 Edwin Wilson</span>
+<span>Apologetic Failures</span>
+</footer>
+</body>
+</html>
